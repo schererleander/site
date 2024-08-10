@@ -1,10 +1,10 @@
 services:
   webpage:
     image: nginx:alpine
-    container_name: webpage
+    container_name: homepage
     volumes:
-      - $HOME/webpage/html/:/usr/share/nginx/html/
-      - $HOME/webpage/nginx.conf:/etc/nginx/conf.d/default.conf
+      - $HOME/homepage/html/:/usr/share/nginx/html/
+      - $HOME/homepage/nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - proxy
 networks:
