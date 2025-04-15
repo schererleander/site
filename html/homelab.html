@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>߸ homelab</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>home lab</h1>
+    <h2>nas</h2>
+    <img width="280" src="nas.png" alt="NAS setup">
+    <p>My custom-built NAS running Unraid in RAID-1 hosts the following services. See <a href="gear.html">gear</a> for specs.</p>
+    <ul>
+      <li><strong>Jellyfin:</strong> Media library</li>
+      <li><strong>Kavita:</strong> Ebooks and manga</li>
+      <li><strong>AdGuard Home:</strong> Ad blocking</li>
+      <li><strong>Nginx:</strong> Reverse proxy</li>
+      <li><strong>Ollama:</strong> Enough for small LLM testing</li>
+    </ul>
+    <p>For remote access, I use a VPN to connect to the machine. I also back up my MacBook using Time Machine, and for my desktop and VPS I use rsync.</p>
+    
+    <h2>raspberry pi</h2>
+    <img width="280px" src="pi.png">
+    <p>Raspberry Pi 5 (8GB) running Homebridge to integrate non-HomeKit devices. It also serves as a precision NTP server using a Uputronics GPS module.</p>
+    
+    <h2>vps</h2>
+    <p>Cheap Ionos VPS for services exposed to the internet. Mainly using it for hosting this website and Nextcloud.</p>
+  </body>
+</html>
