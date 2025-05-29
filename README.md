@@ -1,3 +1,3 @@
-# homepage
-![screenshot](/.assets/screenshot.png)
-My personal website. Trying to keep it simple.
+# site
+My personal website [schererleander.de](https://schererleander.de)
+![screenshot](screenshot.png)
