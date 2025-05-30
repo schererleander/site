@@ -42,7 +42,7 @@ jobs:
           source: "dist/*"
           target: ${{ secrets.VPS_DESTINATION }}
 
-      - name: Restart Nginx (Docker)
+      - name: Restart Nginx (Service)
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -50,4 +50,4 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
           script: |
-            docker restart nginx
+            sudo systemctl restart nginx
