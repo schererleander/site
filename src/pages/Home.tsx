@@ -4,6 +4,9 @@ import dsImg from "../assets/3ds.jpeg";
 import esp32Img from "../assets/esp32.jpeg";
 import riceImg from "../assets/rice.jpg";
 import setupImg from "../assets/setup.jpg";
+import luigimansionImg from "../assets/luigimansion.webp";
+import ocarinaoftimeImg from "../assets/ocarinaoftime.webp";
+import hellsparadiseImg from "../assets/hellsparadise.webp";
 
 export default function HomePage() {
   return (
@@ -15,7 +18,7 @@ export default function HomePage() {
         I have a passion for hardware and software, studying computer science. Currently building own 3d printing projects and learning nix.
       </p>
 
-      <ImageGalleryGrid images={[{ src: dsImg, alt: "Nintendo 3DS", id: 1}, { src: esp32Img, alt: "ESP 32", id: 2}, { src: riceImg, alt: "Linux rice", id: 3}, { src: setupImg, alt: "Setup", id: 4}]} />
+      <ImageGalleryGrid images={[{ src: dsImg, alt: "Nintendo 3DS", id: 1}, { src: esp32Img, alt: "ESP 32", id: 2}, { src: riceImg, alt: "Linux rice", id: 3}, { src: setupImg, alt: "Setup", id: 4}, {src: luigimansionImg, alt: "Luigi Mansion", id: 5}, { src: ocarinaoftimeImg, alt: "Ocarina of Time", id: 6}, { src: hellsparadiseImg, alt: "Hells paradise", id: 7 }]} />
 
       <p className="mb-4">A few things I'm interrested in:</p>
 
