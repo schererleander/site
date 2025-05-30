@@ -22,6 +22,18 @@ jobs:
           npm ci
           npm run build
 
+
+      - name: Ensure remote directory exists
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            sudo mkdir -p ${{ secrets.VPS_DESTINATION }}
+            sudo chown -R ${{ secrets.VPS_USER }} ${{ secrets.VPS_DESTINATION }}
+
       - name: Clean remote directory
         uses: appleboy/ssh-action@master
         with:
