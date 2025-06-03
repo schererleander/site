@@ -6,11 +6,11 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center gap-2 py-4">
       <div className="flex gap-6">
-        <a href="https://github.com/schererleander" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/schererleander" target="_blank" rel="noopener noreferrer" aria-label="Leander Scherer's GitHub">
           <GitHubIcon />
         </a>
 
-        <a href="mailto:leander@schererleander.de">
+        <a href="mailto:leander@schererleander.de" aria-label="Send email to Leander Scherer">
           <MailIcon />
         </a>
       </div>
