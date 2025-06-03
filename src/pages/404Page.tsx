@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import notFoundImg from "../assets/404.png";
+import notFoundImg from "../assets/404.webp";
 import { useEffect } from "react";
 
 export default function NotFoundPage() {

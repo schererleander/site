@@ -1,4 +1,4 @@
-import a1Img from "../assets/a1.png";
+import a1Img from "../assets/a1.webp";
 import CodeSnippet from "../components/CodeSnippet";
 import LinkWithIcon from "../components/LinkWithIcon";
 

@@ -6,7 +6,7 @@ import raylibShooterImg from "../assets/raylibshooter.webp";
 import authenticationImg from "../assets/authentication.webp";
 import todoListImg from "../assets/todolist.webp";
 import speculaImg from "../assets/specula.webp";
-import gitHubImg from "../assets/github.png";
+import gitHubImg from "../assets/github.webp";
 
 export interface Project {
   name: string;

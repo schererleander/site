@@ -1,5 +1,5 @@
-import nasImg from '../assets/nas.png';
-import piImg from '../assets/pi.png';
+import nasImg from '../assets/nas.webp';
+import piImg from '../assets/pi.webp';
 import LinkWithIcon from '../components/LinkWithIcon';
 
 const nasServices = [

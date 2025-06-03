@@ -1,9 +1,9 @@
 import ImageGalleryGrid from "../components/ImageGalleryGrid";
 
-import dsImg from "../assets/3ds.jpeg";
-import esp32Img from "../assets/esp32.jpeg";
-import riceImg from "../assets/rice.jpg";
-import setupImg from "../assets/setup.jpg";
+import dsImg from "../assets/3ds.webp";
+import esp32Img from "../assets/esp32.webp";
+import riceImg from "../assets/rice.webp";
+import setupImg from "../assets/setup.webp";
 import luigimansionImg from "../assets/luigimansion.webp";
 import ocarinaoftimeImg from "../assets/ocarinaoftime.webp";
 import hellsparadiseImg from "../assets/hellsparadise.webp";
