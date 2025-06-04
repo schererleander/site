@@ -7,6 +7,7 @@ import authenticationImg from "../assets/authentication.webp";
 import todoListImg from "../assets/todolist.webp";
 import speculaImg from "../assets/specula.webp";
 import gitHubImg from "../assets/github.webp";
+import siteImg from "../assets/site.webp";
 
 export interface Project {
   name: string;
@@ -17,16 +18,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "Space Invaders",
-    description: "Old-school shooter coded long ago",
-    url: "https://github.com/schererleander/space-invaders",
-    image: spaceInvadersImg,
+    name: "Quiz Website",
+    description: "Dynamic website fetching question from a database",
+    url: "https://github.com/schererleander/quiz",
+    image: quizImg,
   },
   {
-    name: "Hackintosh",
-    description: "macOS on PC hardware (pre-MacBook era)",
-    url: "https://github.com/schererleander/opencore-config",
-    image: hackintoshImg,
+    name: "Authentication",
+    description: "Register & login API with passwords stored as salted bcrypt hashes",
+    url: "https://github.com/schererleander/authentication",
+    image: authenticationImg,
+  },
+  {
+    name: "site",
+    description: "React + Tailwind site auto-deployed to a VPS via GitHub Actions",
+    url: "https://github.com/schererleander/site",
+    image: siteImg,
+  },
+  {
+    name: "Space Invaders",
+    description: "Classic Space-Invaders clone built in Python with Pygame",
+    url: "https://github.com/schererleander/space-invaders",
+    image: spaceInvadersImg,
   },
   {
     name: "Markdown Preview",
@@ -35,10 +48,22 @@ export const projects: Project[] = [
     image: markdownPreviewImg,
   },
   {
-    name: "Quiz Website",
-    description: "Plain but functional school project",
-    url: "https://github.com/schererleander/quiz",
-    image: quizImg,
+    name: "todolist",
+    description: "Simple ncurses CLI todo list (C)",
+    url: "https://github.com/schererleander/todolist",
+    image: todoListImg,
+  },
+  {
+    name: "specula",
+    description: "Minimal TUI for file metadata (go)",
+    url: "https://github.com/schererleander/specula",
+    image: speculaImg,
+  },
+  {
+    name: "Hackintosh",
+    description: "macOS on PC hardware using opencore",
+    url: "https://github.com/schererleander/opencore-config",
+    image: hackintoshImg,
   },
   {
     name: "raylib-shooter",
@@ -47,27 +72,9 @@ export const projects: Project[] = [
     image: raylibShooterImg,
   },
   {
-    name: "Authentication",
-    description: "bcrypt + salted hashes",
-    url: "https://github.com/schererleander/authentication",
-    image: authenticationImg,
-  },
-  {
     name: "Python ICS Modifier",
-    description: "Adds reminders to .ics files",
+    description: "Changes reminders of .ics file",
     url: "https://github.com/schererleander/pyhton-ics-modifier",
     image: gitHubImg
-  },
-  {
-    name: "todolist (curses)",
-    description: "Simple ncurses CLI todo list (C)",
-    url: "https://github.com/schererleander/todolist",
-    image: todoListImg,
-  },
-  {
-    name: "specula",
-    description: "Minimal TUI for file metadata",
-    url: "https://github.com/schererleander/specula",
-    image: speculaImg,
   },
 ];
