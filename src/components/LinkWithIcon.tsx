@@ -7,7 +7,7 @@ export default function LinkWithIcon({
   target = '_blank',
 }: {
   href: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
 }) {
