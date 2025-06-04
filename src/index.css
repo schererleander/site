@@ -6,7 +6,7 @@
 @layer base {
   body { @apply bg-white dark:bg-black/95; }
   span, p, a, li, code { @apply dark:text-gray-200; }
-  svg { @apply transform duration-200 ease-in-out hover:scale-110 dark:text-gray-200 hover:text-gray-400 hover:dark:text-white;}
+  svg:not(.no-global) { @apply transform duration-200 ease-in-out hover:scale-110 dark:text-gray-200 hover:text-gray-400 hover:dark:text-white;}
   h1 { @apply text-4xl font-bold mb-4 dark:text-gray-200; }
   h2 { @apply text-2xl font-semibold mb-2 dark:text-gray-200; }
   h3 { @apply text-xl font-semibold dark:text-gray-200; }
