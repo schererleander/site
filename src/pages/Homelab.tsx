@@ -28,7 +28,7 @@ export default function HomelabPage() {
           ))}
         </ul>
         <p className="mb-4 leading-relaxed">
-          For remote access, I use a VPN to connect to the machine. I also back up my MacBook using Time Machine, and for my desktop and VPS I use rsync.
+          For remote access, I connect to the machine via VPN. I back up my MacBook to that machine with Time Machine, and I back up my desktop and VPS to it using rsync.
         </p>
       </section>
 
@@ -36,7 +36,7 @@ export default function HomelabPage() {
         <h2>Raspberry Pi</h2>
         <img src={piImg} alt="Raspberry Pi 5" className="mx-auto mb-4 w-64 rounded-lg shadow" />
         <p className="mb-4 leading-relaxed">
-          Raspberry Pi 5 (8GB) running Homebridge to integrate non-HomeKit devices. It also serves as a precision NTP server using a <LinkWithIcon href='https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board' target='_blank'>Uputronics GPS module</LinkWithIcon>.
+          Raspberry Pi 5 (8GB) running <LinkWithIcon href='https://homebridge.io'>Homebridge</LinkWithIcon> to integrate non-HomeKit devices. It also serves as a precision NTP server using a <LinkWithIcon href='https://store.uputronics.com/products/raspberry-pi-gps-rtc-expansion-board' target='_blank'>Uputronics GPS module</LinkWithIcon>.
         </p>
       </section>
 
@@ -44,7 +44,7 @@ export default function HomelabPage() {
       <section>
         <h2>VPS</h2>
         <p className="mb-4 leading-relaxed">
-          Cheap Ionos VPS for services exposed to the internet. Mainly using it for hosting this website and Nextcloud.
+          Cheap Ionos VPS running nixos via <LinkWithIcon href='https://github.com/elitak/nixos-infect'>nixos-infect</LinkWithIcon> for services exposed to the internet. Mainly using it for hosting this website and <LinkWithIcon href='https://nextcloud.com'>Nextcloud</LinkWithIcon>.
         </p>
       </section>
     </>
