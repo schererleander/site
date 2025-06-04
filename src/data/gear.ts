@@ -23,7 +23,6 @@ import jonsboN2Img from "../assets/jonsbon2.webp";
 export interface Part {
   name: string;
   description: string;
-  /** string URL returned by the static import above */
   image?: string;
   url?: string;
 }

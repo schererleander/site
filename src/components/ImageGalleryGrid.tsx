@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-interface Props {
+interface ImageItems {
   images: Array<{
     src: string;
     alt?: string;
@@ -8,31 +8,25 @@ interface Props {
   }>;
 }
 
-export default function ImageGalleryGrid({ images }: Props) {
+export default function ImageGalleryGrid({ images }: ImageItems) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const closeModal = () => setSelectedIndex(null);
-  const showPrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setSelectedIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
+  const prev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setSelectedIndex((i) => (i !== null && i > 0 ? i - 1 : i));
   };
-  const showNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setSelectedIndex((prev) =>
-      prev !== null && prev < images.length - 1 ? prev + 1 : prev
-    );
+  const next = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setSelectedIndex((i) => (i !== null && i < images.length - 1 ? i + 1 : i));
   };
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (selectedIndex === null) return;
-      if (event.key === 'Escape') {
-        closeModal;
-      } else if (event.key === 'ArrowLeft') {
-        setSelectedIndex((prev) => (prev && prev > 0 ? prev - 1 : prev));
+      if (event.key === 'ArrowLeft') {
+        prev();
       } else if (event.key === 'ArrowRight') {
-        setSelectedIndex((prev) =>
-          prev !== null && prev < images.length - 1 ? prev + 1 : prev
-        );
+        next();
       }
     }
 
@@ -42,11 +36,11 @@ export default function ImageGalleryGrid({ images }: Props) {
 
   return (
     <>
-      <div className="grid gap-2 grid-cols-4 p-4">
+      <div className="grid gap-2 grid-cols-4 max-sm:grid-cols-3 p-4">
         {images.map((image, idx) => (
-          <div
+          <button
             key={image.id ?? image.src}
-            className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer aspect-square"
+            className="relative overflow-hidden rounded-xl shadow-lg aspect-square"
             onClick={() => setSelectedIndex(idx)}
           >
             <img
@@ -54,7 +48,7 @@ export default function ImageGalleryGrid({ images }: Props) {
               alt={image.alt || 'Gallery image'}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
-          </div>
+          </button>
         ))}
       </div>
 
@@ -68,8 +62,8 @@ export default function ImageGalleryGrid({ images }: Props) {
         >
           {/* Prev arrow */}
           <button
-            onClick={showPrev}
-            className="absolute left-4 text-black dark:text-white text-4xl focus:outline-none cursor-pointer"
+            onClick={prev}
+            className="absolute left-4 text-black dark:text-white text-4xl disabled:opacity-30"
             disabled={selectedIndex === 0}
           >
             &#8592;
@@ -78,16 +72,26 @@ export default function ImageGalleryGrid({ images }: Props) {
           <img
             src={images[selectedIndex].src}
             alt={images[selectedIndex].alt || 'Enlarged gallery'}
-            className="w-1/2 h-1/2 object-contain rounded-lg"
+            className="w-2/3 h-2/3 object-contain rounded-lg"
           />
 
           {/* Next arrow */}
           <button
-            onClick={showNext}
-            className="absolute right-4 text-black dark:text-white text-4xl focus:outline-none cursor-pointer"
+            onClick={next}
+            className="absolute right-4 text-black dark:text-white text-4xl disabled:opacity-30"
             disabled={selectedIndex === images.length - 1}
+            aria-label='Next image'
           >
             &#8594;
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              closeModal();
+            }}
+            className="absolute top-4 right-4 text-black dark:text-white text-3xl"
+          >
+            &times;
           </button>
         </div>
       )}
