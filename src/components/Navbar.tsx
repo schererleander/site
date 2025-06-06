@@ -11,7 +11,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 backdrop-blur flex items-center">
+    <nav className="sticky top-0 z-50 backdrop-blur flex items-center">
       <div className="max-w-2xl mx-auto flex px-4 py-4 text-sm">
         <div className="flex gap-6 items-center">
           {navItems.map(({ label, href }) => (
