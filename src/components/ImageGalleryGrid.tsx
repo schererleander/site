@@ -40,7 +40,7 @@ export default function ImageGalleryGrid({ images }: ImageItems) {
         {images.map((image, idx) => (
           <button
             key={image.id ?? image.src}
-            className="relative overflow-hidden rounded-xl shadow-lg aspect-square"
+            className="relative overflow-hidden rounded-xl shadow-lg aspect-square group cursor-pointer"
             onClick={() => setSelectedIndex(idx)}
           >
             <img
