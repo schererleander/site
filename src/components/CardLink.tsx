@@ -41,7 +41,7 @@ export default function CardLink({ title, body, href, imgSrc }: Props) {
     >
       {/* Spotlight overlay - light */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out"
+        className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out"
         style={{
           opacity,
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, 
@@ -52,7 +52,7 @@ export default function CardLink({ title, body, href, imgSrc }: Props) {
       
       {/* Spotlight overlay - dark mode */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out dark:block"
+        className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out dark:block"
         style={{
           opacity,
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, 
@@ -65,15 +65,15 @@ export default function CardLink({ title, body, href, imgSrc }: Props) {
       {imgSrc && (
         <img 
           src={imgSrc} 
-          className="w-20 h-20 object-cover rounded-lg transition-transform duration-200 hover:scale-105 z-10" 
+          className="w-20 h-20 object-cover rounded-lg" 
           alt={title}
         />
       )}
-      <div className="flex-1 z-10">
+      <div className="flex-1">
         <h3 className="font-medium">{title}</h3>
         <p className="text-sm text-neutral-800 dark:text-neutral-400">{body}</p>
       </div>
-      {href && <div className="z-10"><ExternalLinkIcon /></div>}
+      {href && <ExternalLinkIcon />}
     </div>
   );
 }
