@@ -8,6 +8,7 @@ import todoListImg from "../assets/todolist.webp";
 import speculaImg from "../assets/specula.webp";
 import gitHubImg from "../assets/github.webp";
 import siteImg from "../assets/site.webp";
+import nixImg from "../assets/nix.webp";
 
 export interface Project {
   name: string;
@@ -58,6 +59,12 @@ export const projects: Project[] = [
     description: "Minimal TUI for file metadata (go)",
     url: "https://github.com/schererleander/specula",
     image: speculaImg,
+  },
+  {
+    name: "Nix",
+    description: "Exploring Nix to build a reproducible system configuration across all my devices.",
+    url: "https://github.com/schererleander/nix",
+    image: nixImg,
   },
   {
     name: "Hackintosh",
