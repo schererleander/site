@@ -19,9 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/gear" element={<GearPage />} />
           <Route path='/projects' element={<ProjectsPage />} />
-          <Route path='/homelab' element={<HomelabPage />} />
-          <Route path='/printing' element={<PrintingPage />} />
-          <Route path='/blog' element={<Blog />} />
+          <Route path='/homelab' element={<HomelabPage />} />          <Route path='/blog' element={<Blog />} />
           <Route path='/blog/:slug' element={<Post />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
