@@ -34,7 +34,7 @@ export default function Post() {
   return (
     <article className="prose prose-zinc dark:prose-invert mx-auto px-4 py-10">
       <Link to="/blog" className="no-underline">
-        ← Zurück zum Blog
+        ←  Back
       </Link>
 
       {meta.cover && (
