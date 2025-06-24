@@ -5,7 +5,6 @@ import HomePage from './pages/Home';
 import ProjectsPage from './pages/Projects';
 import HomelabPage from './pages/Homelab';
 import Footer from './components/Footer';
-import PrintingPage from './pages/Printing';
 import NotFoundPage from './pages/404Page';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
