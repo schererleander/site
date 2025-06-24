@@ -7,7 +7,7 @@ export default function Navbar() {
     { label: 'Gear', href: '/gear' },
     { label: 'Projects', href: '/projects' },
     { label: 'Homelab', href: '/homelab' },
-    { label: '3D Printing', href: '/printing' }
+    { label: 'Blog', href: '/blog' }
   ];
 
   return (

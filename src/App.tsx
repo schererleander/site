@@ -7,6 +7,8 @@ import HomelabPage from './pages/Homelab';
 import Footer from './components/Footer';
 import PrintingPage from './pages/Printing';
 import NotFoundPage from './pages/404Page';
+import Blog from './pages/Blog';
+import Post from './pages/Post';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
           <Route path='/projects' element={<ProjectsPage />} />
           <Route path='/homelab' element={<HomelabPage />} />
           <Route path='/printing' element={<PrintingPage />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/blog/:slug' element={<Post />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </section>
