@@ -2,8 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import Sitemap from 'vite-plugin-sitemap';
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
-import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
+import { plugin as mdPlugin, Mode } from 'vite-plugin-markdown';
 
 export default defineConfig({
   plugins: [
@@ -11,24 +10,8 @@ export default defineConfig({
     tailwindcss(),
     Sitemap({
       hostname: "https://schererleander.de",
-      dynamicRoutes: [ "/", "/gear", "/projects", "/homelab", "/printing" ]
-    })
+      dynamicRoutes: [ "/", "/gear", "/projects", "/homelab", "/blog" ]
+    }),
+    mdPlugin({mode: [Mode.REACT, Mode.MARKDOWN],}),
   ],
-  resolve: {
-    alias: {
-      buffer: "buffer",
-      process: "process/browser",
-    },
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true,
-          process: true,
-        }),
-        NodeModulesPolyfillPlugin(),
-      ],
-    },
-  },
 })
