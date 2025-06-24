@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import notFoundImg from "../assets/404.webp";
 import { useEffect } from "react";
 
 export default function NotFoundPage() {
@@ -12,10 +11,11 @@ export default function NotFoundPage() {
 
     return () => clearTimeout(timer);
   }, [navigate]);
-  return(
+
+  return (
     <>
       <h1>404 - Not found</h1>
-      <img src={notFoundImg} className="rounded-lg"/>
+      <img src="/images/404.webp" className="rounded-lg" />
     </>
   );
 }

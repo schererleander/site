@@ -2,7 +2,7 @@
 title: "3D Printing"
 date: "2025-06-25"
 excerpt: "My 3D-printing projects: from a robotic arm to a DIY drone – including the ESP32 controller code."
-cover: "/src/assets/a1.webp"
+cover: "/images/a1.webp"
 ---
 
 # Projects
