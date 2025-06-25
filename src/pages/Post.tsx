@@ -1,4 +1,3 @@
-import { useParams, Link } from "react-router-dom";
 import NotFoundPage from "./404Page";
 
 interface PostFile {

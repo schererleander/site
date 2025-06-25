@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import CardLink from "../components/CardLink";
 
 interface PostMeta {
