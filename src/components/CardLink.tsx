@@ -1,5 +1,8 @@
 import { useRef, useState } from "react";
-import ExternalLinkIcon from "./ExternalLink";
+
+function Icon() {
+  return <svg className="no-global w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h6M15 6h4m0 0v4m0-4L10 15" /></svg>;
+}
 
 interface Props {
   title: string;
@@ -73,7 +76,7 @@ export default function CardLink({ title, body, href, imgSrc }: Props) {
         <h3 className="font-medium">{title}</h3>
         <p className="text-sm text-neutral-800 dark:text-neutral-400">{body}</p>
       </div>
-      {href && <ExternalLinkIcon />}
+      {href && <Icon />}
     </div>
   );
 }
