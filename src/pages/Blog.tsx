@@ -29,13 +29,13 @@ export default function Blog() {
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
       
       {posts.map((post) => (
-        <Link key={post.slug} to={`/blog/${post.slug}`} className="block">
+        <a key={post.slug} href={`/blog/${post.slug}`} className="block">
           <CardLink
             title={post.title}
             body={post.excerpt}
             imgSrc={post.cover}
           />
-        </Link>
+        </a>
       ))}
     </section>
   );

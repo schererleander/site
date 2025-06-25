@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
@@ -15,7 +14,7 @@ export default function Navbar() {
       <div className="max-w-2xl mx-auto flex px-4 py-4 text-sm">
         <div className="flex gap-6 items-center">
           {navItems.map(({ label, href }) => (
-            <Link className="hover:underline" key={label} to={href}>{label}</Link>
+            <a className="hover:underline" key={label} href={href}>{label}</a>
           ))}
           <ThemeToggle />
         </div>

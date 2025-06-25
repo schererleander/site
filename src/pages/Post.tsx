@@ -27,9 +27,9 @@ export default function Post() {
 
   return (
     <article className="prose prose-zinc dark:prose-invert mx-auto px-4 py-10">
-      <Link to="/blog" className="no-underline hover:underline">
+      <a href="/blog" className="no-underline hover:underline">
         ← Back
-      </Link>
+      </a>
 
       {meta.cover && (
         <img
