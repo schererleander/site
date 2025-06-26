@@ -1,6 +1,6 @@
-import CardLink from "../components/CardLink";
+import Card from "../components/Card";
 
-interface PostMeta {
+interface Meta {
   slug: string;
   title: string;
   date: string;
@@ -10,13 +10,13 @@ interface PostMeta {
 
 const postFiles = import.meta.glob("../blog/*.md", { eager: true }) as Record<
   string,
-  { attributes: Omit<PostMeta, "slug"> }
+  { attributes: Omit<Meta, "slug"> }
 >;
 
-const posts: PostMeta[] = Object.entries(postFiles)
+const posts: Meta[] = Object.entries(postFiles)
   .map(([path, mod]) => ({
     slug: path.split("/").pop()!.replace(".md", ""),
-    ...(mod.attributes as Omit<PostMeta, "slug">),
+    ...(mod.attributes as Omit<Meta, "slug">),
   }))
   .sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -24,18 +24,19 @@ const posts: PostMeta[] = Object.entries(postFiles)
 
 export default function Blog() {
   return (
-    <section className="container mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+    <>
+      <title>߸ projects</title>
+      <h1>Blog</h1>
       
       {posts.map((post) => (
         <a key={post.slug} href={`/blog/${post.slug}`} className="block py-1">
-          <CardLink
+          <Card
             title={post.title}
             body={post.excerpt}
             imgSrc={post.cover}
           />
         </a>
       ))}
-    </section>
+    </>
   );
 }

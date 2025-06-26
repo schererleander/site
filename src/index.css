@@ -3,7 +3,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-  body {
+
+  html,
+  body,
+  #root {
     @apply bg-white dark:bg-black/95;
   }
 
@@ -31,15 +34,15 @@
     @apply text-xl font-semibold dark:text-gray-200;
   }
 
-  article>*>p {
+  .post p {
     @apply mb-4 leading-relaxed;
   }
 
-  article>*>ul {
+  .post ul {
     @apply list-disc pl-6 space-y-1;
   }
 
-  article>*>*>img {
+  .post img {
     @apply mx-auto mb-4 w-64 rounded-lg shadow;
   }
 
@@ -51,7 +54,7 @@
     @apply underline text-purple-500;
   }
 
-  pre {
+  .post pre {
     @apply whitespace-pre overflow-x-auto max-w-full max-h-80 rounded-lg border p-2 my-2 border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900;
   }
 

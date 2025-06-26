@@ -1,6 +1,6 @@
-import ImageGalleryGrid from "../components/ImageGalleryGrid";
+import Gallery from "../components/Gallery";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       <title>߸ hi</title>
@@ -10,7 +10,7 @@ export default function HomePage() {
         I have a passion for hardware and software, studying computer science. Currently building own 3d printing projects and learning nix.
       </p>
 
-      <ImageGalleryGrid
+      <Gallery
         images={[
           { src: "/images/3ds.webp", alt: "Nintendo 3DS", id: 1 },
           { src: "/images/esp32.webp", alt: "ESP 32", id: 2 },

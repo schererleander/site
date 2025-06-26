@@ -10,7 +10,7 @@ export default defineConfig({
     tailwindcss(),
     Sitemap({
       hostname: "https://schererleander.de",
-      dynamicRoutes: [ "/", "/gear", "/projects", "/homelab", "/blog" ]
+      dynamicRoutes: [ "/", "/gear", "/projects", "/blog" ]
     }),
     mdPlugin({mode: [Mode.REACT, Mode.MARKDOWN],}),
   ],

@@ -26,7 +26,7 @@ export default function Post() {
   const { attributes: meta, ReactComponent: Content } = post;
 
   return (
-    <article>
+    <>
       <a href="/blog" className="no-underline hover:underline">
         ← Back
       </a>
@@ -41,7 +41,9 @@ export default function Post() {
 
       <h1>{meta.title}</h1>
       <p className="text-sm text-zinc-500 mb-8">{formDate.format(new Date(meta.date))}</p>
-      <Content />
-    </article>
+      <div className="post">
+        <Content />
+      </div>
+    </>
   );
 }

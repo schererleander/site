@@ -8,7 +8,7 @@ interface ImageItems {
   }>;
 }
 
-export default function ImageGalleryGrid({ images }: ImageItems) {
+export default function Gallery({ images }: ImageItems) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const closeModal = () => setSelectedIndex(null);
   const prev = (e?: React.MouseEvent) => {

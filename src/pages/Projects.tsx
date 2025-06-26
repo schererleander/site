@@ -1,7 +1,7 @@
-import CardLink from '../components/CardLink';
+import Card from '../components/Card';
 import { projects, type Project } from '../data/projects';
 
-export default function ProjectsPage() {
+export default function Projects() {
   return (
     <>
       <title>߸ projects</title>
@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <ul className="space-y-2">
         {projects.map((p: Project) => (
           <li key={p.name}>
-            <CardLink
+            <Card
               title={p.name}
               body={p.description}
               href={p.url}

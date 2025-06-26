@@ -1,4 +1,4 @@
-import CardLink from '../components/CardLink';
+import Card from '../components/Card';
 
 import {
   dailyDrivers,
@@ -14,7 +14,7 @@ function PartsGroup({ title, parts }: { title?: string; parts: Part[] }) {
       <ul className="space-y-2">
         {parts.map((p) => (
           <li key={p.name}>
-            <CardLink
+            <Card
               title={p.name}
               body={p.description}
               href={p.url}
@@ -27,7 +27,7 @@ function PartsGroup({ title, parts }: { title?: string; parts: Part[] }) {
   );
 }
 
-export default function GearPage() {
+export default function Gear() {
   return (
     <>
       <title>߸ gear</title>
