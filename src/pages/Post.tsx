@@ -1,32 +1,32 @@
-import { useParams } from "react-router-dom";
-import NotFoundPage from "./404Page";
+import { useParams, Navigate } from "react-router-dom";
+import type { FC } from "react";
 
-interface PostFile {
-  attributes: {
-    title: string;
-    date: string;
-    cover?: string;
-  };
-  markdown: string;
-  ReactComponent: React.FC<any>;
+interface Meta {
+  title: string;
+  date: string;
+  cover?: string;
 }
 
-const posts = import.meta.glob("../blog/*.md", {
-  eager: true,
-}) as Record<string, PostFile>;
+interface Post {
+  attributes: Meta;
+  ReactComponent: FC;
+}
+
+const posts = import.meta.glob<Post>("../blog/*.md", { eager: true });
+
+const formDate = new Intl.DateTimeFormat("de-DE", { dateStyle: "medium" });
 
 export default function Post() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams();
+  
+  const post = posts[`../blog/${slug}.md`];
 
-  const match = Object.entries(posts).find(([path]) =>
-    path.endsWith(`${slug}.md`)
-  );
+  if (!post) return <Navigate to="/404" replace />;
 
-  if (!match) return <NotFoundPage />;
-  const { attributes: meta, ReactComponent: Content } = match[1];
+  const { attributes: meta, ReactComponent: Content } = post;
 
   return (
-    <article className="prose prose-zinc dark:prose-invert mx-auto px-4 py-10">
+    <article>
       <a href="/blog" className="no-underline hover:underline">
         ← Back
       </a>
@@ -40,10 +40,7 @@ export default function Post() {
       )}
 
       <h1>{meta.title}</h1>
-      <p className="text-sm text-zinc-500 mb-8">
-        {new Date(meta.date).toLocaleDateString("de-DE")}
-      </p>
-
+      <p className="text-sm text-zinc-500 mb-8">{formDate.format(new Date(meta.date))}</p>
       <Content />
     </article>
   );

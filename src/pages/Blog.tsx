@@ -28,7 +28,7 @@ export default function Blog() {
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
       
       {posts.map((post) => (
-        <a key={post.slug} href={`/blog/${post.slug}`} className="block">
+        <a key={post.slug} href={`/blog/${post.slug}`} className="block py-1">
           <CardLink
             title={post.title}
             body={post.excerpt}

@@ -1,17 +1,56 @@
-
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-  body { @apply bg-white dark:bg-black/95; }
-  span, p, a, li, code { @apply dark:text-gray-200; }
-  svg:not(.no-global) { @apply transform duration-200 ease-in-out hover:scale-110 dark:text-gray-200 hover:text-gray-400 hover:dark:text-white;}
-  h1 { @apply text-4xl font-bold mb-4 dark:text-gray-200; }
-  h2 { @apply text-2xl font-semibold mb-2 dark:text-gray-200; }
-  h3 { @apply text-xl font-semibold dark:text-gray-200; }
-  section > * > a:not(.block):link { @apply underline text-blue-500; }
-  section > * > a:not(.block):visited { @apply underline text-purple-500; }
+  body {
+    @apply bg-white dark:bg-black/95;
+  }
+
+  span,
+  p,
+  a,
+  li,
+  code {
+    @apply dark:text-gray-200;
+  }
+
+  svg:not(.no-global) {
+    @apply transform duration-200 ease-in-out hover:scale-110 dark:text-gray-200 hover:text-gray-400 hover:dark:text-white;
+  }
+
+  h1 {
+    @apply text-4xl font-bold mb-4 dark:text-gray-200;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mb-2 dark:text-gray-200;
+  }
+
+  h3 {
+    @apply text-xl font-semibold dark:text-gray-200;
+  }
+
+  article>*>p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  article>*>ul {
+    @apply list-disc pl-6 space-y-1;
+  }
+
+  article>*>*>img {
+    @apply mx-auto mb-4 w-64 rounded-lg shadow;
+  }
+
+  p>a:not(.block):link {
+    @apply underline text-blue-500;
+  }
+
+  p>a:not(.block):visited {
+    @apply underline text-purple-500;
+  }
+
   pre {
     @apply whitespace-pre overflow-x-auto max-w-full max-h-80 rounded-lg border p-2 my-2 border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900;
   }
