@@ -5,7 +5,6 @@ export default function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'Gear', href: '/gear' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Homelab', href: '/homelab' },
     { label: 'Blog', href: '/blog' }
   ];
 
