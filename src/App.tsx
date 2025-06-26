@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import GearPage from './pages/Gear';
 import HomePage from './pages/Home';
 import ProjectsPage from './pages/Projects';
-import HomelabPage from './pages/Homelab';
 import Footer from './components/Footer';
 import NotFoundPage from './pages/404Page';
 import Blog from './pages/Blog';
@@ -19,7 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/gear" element={<GearPage />} />
           <Route path='/projects' element={<ProjectsPage />} />
-          <Route path='/homelab' element={<HomelabPage />} />          <Route path='/blog' element={<Blog />} />
+          <Route path='/blog' element={<Blog />} />
           <Route path='/blog/:slug' element={<Post />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
