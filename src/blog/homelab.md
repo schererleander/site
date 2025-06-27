@@ -15,6 +15,9 @@ My custom-built NAS running Unraid hosts the following services. See [gear](/gea
 - Nginx: Reverse proxy
 - Ollama: Enough for small LLM testing
 
+![NAS Fan Mod](/images/nasfan.webp)
+Replaced the rear fan with a [Nocuta NF-A12x15](https://noctua.at/en/nf-a12x15-pwm-chromax-black-swap) that is much quieter.
+
 For remote access, I connect to the machine via VPN. I back up my MacBook to that machine with Time Machine, and I back up my desktop and VPS to it using rsync.
 
 ## Raspberry Pi
