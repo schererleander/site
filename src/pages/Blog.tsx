@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import Entry from "../components/Entry";
 
 interface Meta {
   slug: string;
@@ -27,16 +27,19 @@ export default function Blog() {
     <>
       <title>߸ projects</title>
       <h1>Blog</h1>
-      
+      <div className="grid grid-cols-2 gap-4 [grid-auto-rows:1fr]">
+ 
       {posts.map((post) => (
-        <a key={post.slug} href={`/blog/${post.slug}`} className="block py-1">
-          <Card
+          <Entry
             title={post.title}
-            body={post.excerpt}
-            imgSrc={post.cover}
+            excerpt={post.excerpt}
+            cover={post.cover}
+            href={`/blog/${post.slug}`}
+            date={post.date}
           />
-        </a>
       ))}
+              </div>
+
     </>
   );
 }
