@@ -19,6 +19,12 @@ export const projects: Project[] = [
     image: "/images/authentication.webp",
   },
   {
+    name: "Boilerplate",
+    description: "Next.js boilerplate with authentication, user profiles, and file storage using MongoDB & MinIO",
+    url: "https://github.com/schererleander/boilerplate",
+    image: "/images/boilerplate.webp",
+  },
+  {
     name: "site",
     description: "React + Tailwind site auto-deployed to a VPS via GitHub Actions",
     url: "https://github.com/schererleander/site",
