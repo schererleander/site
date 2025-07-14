@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Projects } from "@/data/projects";
 import { Tools } from "@/data/tools";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 
 export default function Home() {
   return (
