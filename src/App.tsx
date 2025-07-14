@@ -1,8 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Gear from './pages/Gear';
 import Home from './pages/Home';
-import Projects from './pages/Projects';
 import Footer from './components/Footer';
 import NotFound from './pages/404';
 import Blog from './pages/Blog';
@@ -11,13 +9,11 @@ import Post from './pages/Post';
 function App() {
 
   return (
-    <>
+    <>        
       <Navbar />
-      <section className="max-w-xl mx-auto py-5 px-4">
+      <section className="max-w-4xl mx-auto py-5 px-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/gear" element={<Gear />} />
-          <Route path='/projects' element={<Projects />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/blog/:slug' element={<Post />} />
           <Route path='*' element={<NotFound />} />

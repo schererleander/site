@@ -1,22 +1,23 @@
+import { Button } from "./ui/button";
 import ThemeToggle from "./ThemeToggle";
 
-export default function Navbar() {
-  const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Gear', href: '/gear' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Blog', href: '/blog' }
-  ];
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+];
 
+export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur flex items-center">
-      <div className="max-w-2xl mx-auto flex px-4 py-4 text-sm">
-        <div className="flex gap-6 items-center">
+    <nav className="sticky top-0 z-50 w-full backdrop-blur">
+      <div className="max-w-2xl mx-auto flex items-center justify-between px-4 py-4">
+        <div className="flex gap-4 justify-center flex-1">
           {navItems.map(({ label, href }) => (
-            <a className="hover:underline" key={label} href={href}>{label}</a>
+            <Button key={label} variant="ghost" asChild>
+              <a href={href}>{label}</a>
+            </Button>
           ))}
-          <ThemeToggle />
         </div>
+        <ThemeToggle />
       </div>
     </nav>
   );
