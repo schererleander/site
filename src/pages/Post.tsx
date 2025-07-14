@@ -39,9 +39,9 @@ export default function Post() {
         />
       )}
 
-      <h1>{meta.title}</h1>
-      <p className="text-sm text-zinc-500 mb-8">{formDate.format(new Date(meta.date))}</p>
-      <div className="post">
+      <h1 className="text-2xl font-bold mb-4">{meta.title}</h1>
+      <p className="text-sm text-muted-foreground mb-8">{formDate.format(new Date(meta.date))}</p>
+      <div className="prose prose-neutral prose-xl max-w-none prose-img:mx-auto prose-img:w-1/2 prose-img:rounded-lg prose-img:shadow-lg dark:prose-invert">
         <Content />
       </div>
     </>
