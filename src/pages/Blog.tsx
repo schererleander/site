@@ -46,7 +46,7 @@ export default function Blog() {
           <h1 className="text-3xl font-semibold mb-4">
             Blog Posts
           </h1>
-          <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {posts.map((post) => (
               <Card className="bg-secondary border border-border p-0" key={post.slug}>
                 <CardHeader className="p-0">

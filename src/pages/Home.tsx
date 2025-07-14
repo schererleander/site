@@ -41,9 +41,9 @@ export default function Home() {
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold mb-6">Tools & Technologies</h2>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Tools.map((tool) => (
-              <Card className="bg-secondary border border-border py-2">
+              <Card className="bg-secondary border border-border p-2">
                 <div className="flex items-center px-4 py-2">
                   <div className={`p-2 rounded-sm ${tool.color}`}>
                     <img src={tool.image} alt={tool.name} className="w-6 h-6" />
@@ -60,7 +60,7 @@ export default function Home() {
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold mb-6">Projects</h2>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Projects.map((project) => (
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <Card className="bg-secondary border border-border py-2">
