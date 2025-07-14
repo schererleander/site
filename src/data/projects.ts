@@ -14,6 +14,13 @@ export const Projects = [
     badges: ["Express", "PostgreSQL", "Tailwind CSS", "JavaScript"],
   },
   {
+    name: "Space Invaders",
+    description: "A space invaders clone written in Python",
+    image: "/images/spaceinvaders.webp",
+    link: "https://github.com/schererleander/spaceinvaders",
+    badges: ["Python", "Pygame"],
+  },
+  {
     name: "Specula",
     description: "A minimal TUI for file metadata",
     image: "/images/specula.webp",
