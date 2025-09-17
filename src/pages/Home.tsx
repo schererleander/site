@@ -8,7 +8,7 @@ import { Github, Mail } from "lucide-react";
 export default function Home() {
   return (
     <>
-      <title>Hi, I'm Leander</title>
+      <title>߸ home</title>
       <main className="container mx-auto py-12">
         <div className="relative flex justify-center items-center pt-24">
           {/* Gradient Blob */}

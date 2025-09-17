@@ -14,6 +14,7 @@ export default function NotFound() {
 
   return (
     <>
+			<title>߸ 404</title>
       <h1 className="text-2xl font-semibold pt-4">404 - Not found</h1>
       <img src="/images/404.webp" className="rounded-lg" />
     </>

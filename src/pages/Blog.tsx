@@ -41,7 +41,7 @@ const posts: Meta[] = Object.entries(postFiles)
 export default function Blog() {
   return (
     <>
-      <title>Blog</title>
+      <title>߸ blog</title>
       <main className="container mx-auto py-12">
           <h1 className="text-3xl font-semibold mb-4">
             Blog Posts
