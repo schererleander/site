@@ -20,18 +20,20 @@ export default function Post() {
 	const { slug } = useParams();
 
 	const post = posts[`../blog/${slug}.md`];
+	const title = post?.attributes.title ?? "߸ blog post"
+
+	useEffect(() => {
+		document.title = `߸ ${meta.title}`;
+	}, [title])
 
 	if (!post) return <Navigate to="/404" replace />;
 
 	const { attributes: meta, ReactComponent: Content } = post;
 
-	useEffect(() => {
-		document.title = `߸ ${meta.title}`;
-	}, [meta.title])
+
 
 	return (
 		<>
-			<title>߸ blog post</title>
 			<main>
 				<a href="/blog" className="no-underline hover:underline">
 					← Back
