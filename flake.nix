@@ -46,7 +46,7 @@
     )
     // {
       nixosModules.default =
-        { lib, config, ... }:
+        { lib, config, pkgs, ... }:
         let
           cfg = config.services.site;
           inherit (lib)
@@ -68,7 +68,7 @@
             package = mkOption {
               type = types.package;
               description = "Package whose /share/web contains the built site.";
-              default = self.packages.${config.nixpkgs.hostPlatform.system}.default;
+              default = self.packages.${pkgs.system}.default;
             };
 
             sslCertificate = mkOption {
