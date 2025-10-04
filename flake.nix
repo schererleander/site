@@ -83,14 +83,15 @@
             };
           };
 
-          assertions = [
-            {
-              assertion = (cfg.sslCertificate == null) == (cfg.sslCertificateKey == null);
-              message = "services.site: sslCertificate and sslCertificateKey must be set together.";
-            }
-          ];
-
           config = mkIf cfg.enable {
+
+            assertions = [
+              {
+                assertion = (cfg.sslCertificate == null) == (cfg.sslCertificateKey == null);
+                message = "services.site: sslCertificate and sslCertificateKey must be set together.";
+              }
+            ];
+
             services.nginx.enable = true;
 
             services.nginx.virtualHosts.${cfg.domain} =
