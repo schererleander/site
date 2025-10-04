@@ -29,6 +29,12 @@ export const Tools = [
     description: "Object-oriented programming",
     image: "/icons/java.svg",
   },
+	{
+		name: "Nix",
+		color: "bg-blue-500/20",
+		description: "Declarative & reproducible",
+		image: "/icons/nix.svg"
+	},
   {
     name: "Tailwind",
     color: "bg-blue-500/20",
