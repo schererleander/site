@@ -46,7 +46,12 @@
     )
     // {
       nixosModules.default =
-        { lib, config, pkgs, ... }:
+        {
+          lib,
+          config,
+          pkgs,
+          ...
+        }:
         let
           cfg = config.services.site;
           inherit (lib)
@@ -65,11 +70,11 @@
               description = "Domain to serve.";
             };
 
-						default = lib.mkOption {
-							type = types.bool;
-							default = false;
-            	description = "Make this vhost the default for nginx.";
-						};
+            default = lib.mkOption {
+              type = types.bool;
+              default = false;
+              description = "Make this vhost the default for nginx.";
+            };
 
             package = mkOption {
               type = types.package;
@@ -106,7 +111,7 @@
               in
               {
                 root = "${cfg.package}/share/web";
-								default = cfg.default;
+                default = cfg.default;
 
                 locations."/" = {
                   tryFiles = "$uri $uri/ /index.html";
