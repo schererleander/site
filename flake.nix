@@ -65,6 +65,12 @@
               description = "Domain to serve.";
             };
 
+						default = lib.mkOption {
+							type = types.bool;
+							default = false;
+            	description = "Make this vhost the default for nginx.";
+						};
+
             package = mkOption {
               type = types.package;
               description = "Package whose /share/web contains the built site.";
@@ -100,6 +106,7 @@
               in
               {
                 root = "${cfg.package}/share/web";
+								default = cfg.default;
 
                 locations."/" = {
                   tryFiles = "$uri $uri/ /index.html";
