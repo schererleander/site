@@ -19,7 +19,7 @@ interface Meta {
 const images =[
   { src: "/images/3ds.webp", alt: "Nintendo 3DS", id: 1 },
   { src: "/images/esp32.webp", alt: "ESP 32", id: 2 },
-  { src: "/images/setup.webp", alt: "Setup", id: 4 },
+  { src: "/images/manga.webp", alt: "Manga", id: 4 },
   { src: "/images/ocarinaoftime.webp", alt: "Ocarina of Time", id: 6 },
   { src: "/images/hellsparadise.webp", alt: "Hells paradise", id: 7 }
 ]
