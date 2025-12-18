@@ -22,7 +22,7 @@
           version = "0.1.0";
           src = ./.;
 
-          npmDepsHash = "sha256-AkAQRjosZns/E7B6GsMprtsRMm+q9WZk3dyiKbjso1c=";
+          npmDepsHash = "sha256-UVgAOgJgOIPCu+AkDWwhx1tbGGtxuRP2vsTrymY1E5c="
 
           nodejs = pkgs.nodejs;
 
