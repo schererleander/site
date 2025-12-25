@@ -35,28 +35,4 @@ export const Tools = [
 		description: "Declarative & reproducible",
 		image: "/icons/nix.svg"
 	},
-  {
-    name: "Tailwind",
-    color: "bg-blue-500/20",
-    description: "CSS framework",
-    image: "/icons/tailwind.svg",
-  },
-  {
-    name: "React",
-    color: "bg-blue-500/20",
-    description: "UI library",
-    image: "/icons/react.svg",
-  },
-  {
-    name: "TypeScript",
-    color: "bg-blue-500/20",
-    description: "JavaScript but better",
-    image: "/icons/typescript.svg",
-  },
-  {
-    name: "MongoDB",
-    color: "bg-green-500/20",
-    description: "Database",
-    image: "/icons/mongodb.svg",
-  },
 ];
