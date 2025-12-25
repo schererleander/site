@@ -1,0 +1,31 @@
+---
+title: Homelab
+date: 2025-06-25
+---
+
+My custom-built NAS running Unraid hosts the following services.
+
+![NAS](/images/homelab/nas.webp)
+
+* Jellyfin: Media library
+* Kavita: Ebooks and manga
+* AdGuard Home: Ad blocking
+* Nginx: Reverse proxy
+* Borgmatic: Configuration-driven backup software
+
+AppData and important shares such Pictures are backuped via borgmatic to Borgbase
+
+Replaced the rear fan with a Nocuta NF-A12x15 that is much quieter.
+
+![NAS Fan](/images/homelab/nasfan.webp)
+
+For remote access, I connect to the machine via VPN. I back up my MacBook to that machine with Time Machine, and I back up my desktop and VPS to it using rsync.
+Raspberry Pi
+
+![Raspberry Pi](/images/homelab/pi.webp)
+
+## Raspberry Pi
+Raspberry Pi 5 (8GB) running Homebridge to integrate non-HomeKit devices. It also serves as a precision NTP server using a Uputronics GPS module.
+VPS
+
+Cheap Ionos VPS running nixos via nixos-infect for services exposed to the internet. Mainly using it for hosting this website and Nextcloud.
