@@ -32,15 +32,15 @@
 
           installPhase = ''
             runHook preInstall
-            
+
             mkdir -p $out/share/web
-            
+
             cp -r .next/standalone/* $out/share/web/
-            
+
             mkdir -p $out/share/web/.next
             cp -r .next/static $out/share/web/.next/
             cp -r public $out/share/web/
-            
+
             runHook postInstall
           '';
         };
@@ -88,9 +88,28 @@
               description = "The site package to run.";
               default = self.packages.${pkgs.system}.default;
             };
+
+            sslCertificate = mkOption {
+              type = types.nullOr types.path;
+              default = null;
+              description = "Path to TLS certificate (PEM).";
+            };
+            sslCertificateKey = mkOption {
+              type = types.nullOr types.path;
+              default = null;
+              description = "Path to TLS private key (PEM).";
+            };
           };
 
           config = mkIf cfg.enable {
+
+            assertions = [
+              {
+                assertion = (cfg.sslCertificate == null) == (cfg.sslCertificateKey == null);
+                message = "services.site: sslCertificate and sslCertificateKey must be set together.";
+              }
+            ];
+
             systemd.services.site = {
               description = "Next.js site service";
               wantedBy = [ "multi-user.target" ];
@@ -102,7 +121,7 @@
                 User = "nextjs";
                 Group = "nextjs";
                 Restart = "always";
-                
+
                 # Hardening
                 DynamicUser = true;
                 PrivateTmp = true;
@@ -120,12 +139,19 @@
 
             services.nginx = {
               enable = true;
-              virtualHosts.${cfg.domain} = {
-                locations."/" = {
-                  proxyPass = "http://127.0.0.1:${toString cfg.port}";
-                  proxyWebsockets = true;
+              virtualHosts.${cfg.domain} =
+                let
+                  useTLS = (cfg.sslCertificate != null) && (cfg.sslCertificateKey != null);
+                in
+                {
+                  forceSSL = useTLS;
+                  sslCertificate = mkIf useTLS cfg.sslCertificate;
+                  sslCertificateKey = mkIf useTLS cfg.sslCertificateKey;
+                  locations."/" = {
+                    proxyPass = "http://127.0.0.1:${toString cfg.port}";
+                    proxyWebsockets = true;
+                  };
                 };
-              };
             };
           };
         };
