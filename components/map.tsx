@@ -23,7 +23,7 @@ export default function Map() {
 
   return (
     <div
-      className="relative h-[350px] rounded-xl overflow-hidden border border-border z-0 bg-background"
+      className="relative h-[350px] -mx-6 sm:mx-0 sm:rounded-xl overflow-hidden sm:border z-0 bg-background"
       style={{
         maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
         WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",

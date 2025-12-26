@@ -7,7 +7,7 @@ export function Header() {
     <header className="mx-auto flex w-full max-w-[var(--site-width)] items-center justify-between gap-5 py-4">
       <div className="flex items-center gap-6">
         <Link href="/" className="font-bold text-xl">
-          <PawPrint className="hover:rotate-12 transition-transform" />
+          <PawPrint className="hover:rotate-12 transition-transform h-5 w-5" />
         </Link>
         <nav className="flex gap-6">
           <Link 
