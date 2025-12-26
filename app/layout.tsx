@@ -24,19 +24,21 @@ export default function Layout({
 					customDomain="https://analytics.schererleander.de"
 					selfHosted
 				>
-				  <ThemeProvider
-					  attribute="class"
-					  defaultTheme="system"
-					  enableSystem
-					  disableTransitionOnChange
-				  >
-					  <Header />
-					  <main className="mx-auto max-w-[var(--site-width)]">
-						  {children}
-					  </main>
-					  <Footer />
-					  <Noise />
-				  </ThemeProvider>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<div className="relative min-h-full px-4">
+							<Header />
+							<main className="mx-auto max-w-[var(--site-width)]">
+								{children}
+							</main>
+							<Footer />
+							<Noise />
+						</div>
+					</ThemeProvider>
 				</PlausibleProvider>
 			</body>
 		</html>
