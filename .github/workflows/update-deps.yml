@@ -22,7 +22,7 @@ jobs:
         run: |
           npm update
           NEW_HASH=$(nix shell nixpkgs#prefetch-npm-deps -c prefetch-npm-deps package-lock.json)
-          sed -i "s|npmDepsHash = ".*"|npmDepsHash = \"$NEW_HASH\"|" flake.nix
+          sed -i "s|npmDepsHash = ".*"|npmDepsHash = \"$NEW_HASH\";|" flake.nix
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
