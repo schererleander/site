@@ -1,3 +1,4 @@
+import PlausibleProvider from "next-plausible";
 import { Noise } from "@/components/noise";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Footer } from "@/components/footer"
@@ -18,19 +19,25 @@ export default function Layout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
+				<PlausibleProvider
+					domain="schererleander.de"
+					customDomain="https://analytics.schererleander.de"
+					selfHosted
 				>
-					<Header />
-					<main className="mx-auto max-w-[var(--site-width)]">
-						{children}
-					</main>
-					<Footer />
-					<Noise />
-				</ThemeProvider>
+				  <ThemeProvider
+					  attribute="class"
+					  defaultTheme="system"
+					  enableSystem
+					  disableTransitionOnChange
+				  >
+					  <Header />
+					  <main className="mx-auto max-w-[var(--site-width)]">
+						  {children}
+					  </main>
+					  <Footer />
+					  <Noise />
+				  </ThemeProvider>
+				</PlausibleProvider>
 			</body>
 		</html>
 	);
