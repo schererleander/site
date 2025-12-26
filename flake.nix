@@ -35,7 +35,7 @@
 
             mkdir -p $out/share/web
 
-            cp -r .next/standalone/* $out/share/web/
+            cp -r .next/standalone/. $out/share/web/
 
             mkdir -p $out/share/web/.next
             cp -r .next/static $out/share/web/.next/
@@ -48,6 +48,24 @@
       {
         packages = {
           default = site;
+        };
+
+        devShells = {
+          default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              nodejs_22
+              corepack_22
+              nodePackages.typescript-language-server
+              nodePackages.vscode-langservers-extracted
+            ];
+
+            shellHook = ''
+              export PATH="$PWD/node_modules/.bin:$PATH"
+              echo "Development environment loaded."
+              node --version
+              exec zsh
+            '';
+          };
         };
       }
     )
