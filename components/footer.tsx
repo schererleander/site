@@ -7,10 +7,10 @@ export function Footer() {
       <div className="flex items-center justify-between">
         <div className="flex gap-4">
           <Link
-            href="/privacy"
+            href="/legal"
             className="text-muted-foreground/60 transition-colors hover:text-foreground"
           >
-            Privacy
+            Legal
           </Link>
         </div>
         <Panda />
