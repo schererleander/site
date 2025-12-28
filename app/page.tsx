@@ -1,4 +1,3 @@
-
 import { ToolsGrid } from "@/components/tools-grid";
 import { ProjectsGrid } from "@/components/projects-grid";
 import { PostCard } from "@/components/post-card";
@@ -19,7 +18,7 @@ export default function Home() {
 				<div className="pointer-events-auto">
 					<h2 className="text-2xl font-bold mix-blend-luminosity text-foreground">Hi, I&apos;m Leander.</h2>
 					<p className="text-muted-foreground/60 max-w-lg mx-auto">
-						Passionate about hardware & software, pursuing computer science studies. Currently building 3D-printing projects and exploring homelabing.
+						Interested in hardware & software, pursuing computer science studies. Currently building 3D-printing projects and exploring homelabing.
 					</p>
 				</div>
 			</section>

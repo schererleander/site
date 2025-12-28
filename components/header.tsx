@@ -16,12 +16,6 @@ export function Header() {
           >
             Blog
           </Link>
-          <Link 
-            href="/projects" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Projects
-          </Link>
         </nav>
       </div>
 
