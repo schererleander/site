@@ -1,12 +1,26 @@
-
-"use client"
+"use client";
 
 import { useRef } from 'react';
 import MapGL, { Marker, MapRef } from 'react-map-gl/maplibre';
-import maplibregl from 'maplibre-gl';
+import maplibregl, { type StyleSpecification } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import { Protocol } from 'pmtiles';
 
-const KARLSRUHE: { longitude: number, latitude: number } = { longitude: 8.4037, latitude: 49.0069 };
+import styleDark from '@/public/style-dark.json';
+
+const KARLSRUHE = { longitude: 8.4037, latitude: 49.0069 };
+const mapStyle = styleDark as unknown as StyleSpecification;
+
+if (typeof window !== 'undefined') {
+  const globalForProtocol = globalThis as typeof globalThis & {
+    __maplibrePmtilesProtocol?: Protocol;
+  };
+
+  if (!globalForProtocol.__maplibrePmtilesProtocol) {
+    globalForProtocol.__maplibrePmtilesProtocol = new Protocol({ metadata: true });
+    maplibregl.addProtocol('pmtiles', globalForProtocol.__maplibrePmtilesProtocol.tile);
+  }
+}
 
 export default function Map() {
   const mapRef = useRef<MapRef>(null);
@@ -14,8 +28,8 @@ export default function Map() {
   const onMapLoad = () => {
     mapRef.current?.flyTo({
       center: [KARLSRUHE.longitude, KARLSRUHE.latitude],
-      zoom: 10,
-      speed: 0.5,
+      zoom: 8,
+      speed: 0.8,
       curve: 1,
       essential: true
     });
@@ -36,33 +50,14 @@ export default function Map() {
         initialViewState={{
           longitude: KARLSRUHE.longitude,
           latitude: KARLSRUHE.latitude,
-          zoom: 2
+          zoom: 3
         }}
         style={{ width: "100%", height: "100%" }}
-        mapStyle={{
-          version: 8,
-          sources: {
-            "carto-dark": {
-              type: "raster",
-              tiles: ["https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
-              tileSize: 256,
-              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            },
-          },
-          layers: [
-            {
-              id: "carto-dark-layer",
-              type: "raster",
-              source: "carto-dark",
-              minzoom: 0,
-              maxzoom: 22,
-            },
-          ],
-        }}
+        mapStyle={mapStyle}
         attributionControl={false}
       >
-        <Marker longitude={KARLSRUHE.longitude} latitude={KARLSRUHE.latitude} color="red">
-             <div style={{width:'12px',height:'12px',background:'var(--background)',borderRadius:'50%',border:'2px solid var(--foreground)',boxShadow:'0 0 10px rgba(0,0,0,0.5)'}} />
+        <Marker longitude={KARLSRUHE.longitude} latitude={KARLSRUHE.latitude}>
+          <div className="h-3 w-3 rounded-full border-2 border-foreground bg-background shadow-[0_0_10px_rgba(0,0,0,0.5)]" />
         </Marker>
       </MapGL>
     </div>
