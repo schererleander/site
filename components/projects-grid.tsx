@@ -17,6 +17,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/schererleander/boilerplate",
     videoSrc: "/videos/boilerplate-preview.mp4",
   },
+	 {
+    title: "Dungeon",
+    description: "An 8-bit dungeon crawler game made using the Raylib library and Tiled map editor.",
+    githubUrl: "https://github.com/schererleander/dungeon",
+		videoSrc: "/videos/dungeon-preview.mp4",
+  },
+
   {
     title: "Authentication",
     description: "Simple authentication system built using Express.js.",
@@ -29,12 +36,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/schererleander/spaceinvaders",
     videoSrc: "/videos/spaceinvaders-preview.mp4",
   },
-  {
-    title: "Specula",
-    description: "A minimal TUI tool written in Go to view file metadata and description.",
-    githubUrl: "https://github.com/schererleander/specula",
-  },
-];
+ ];
 
 export function ProjectsGrid() {
   return (
