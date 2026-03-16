@@ -22,7 +22,7 @@
           version = "0.1.0";
           src = ./.;
 
-          npmDepsHash = "sha256-GebUQ/AOHeo0jJyhV7KNSs7aNar6DoHEQxHYTqqQVsc=";
+          npmDepsHash = "sha256-WgQZwd9SqGdGo9CBLWBsxrhRlCsXu8ojEyX2vVZPdfc=";
 
           buildPhase = ''
             runHook preBuild
