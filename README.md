@@ -1,4 +1,4 @@
 # site
 Personal website
 
-![](screenshots.png)
+![](screenshot.png)
